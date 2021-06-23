@@ -1,0 +1,42 @@
+<%- include('bootheader') -%>
+<%- include('menubar') -%>
+
+<div class="jumbotron">
+  <h1>Your Profile</h1>
+  <p> Here is your profile!
+  </p>
+</div>
+<hr>
+<a href="editProfile">Edit</a>
+<hr>
+<div class="row">
+  <div class="col-sm-4">
+    <img src="<%= user.imageURL %>" alt="image of user">
+  </div>
+  <div class="col-sm-4">
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <td>googlename</td>
+            <td><%= user.googlename %> </td>
+          </tr>
+          <tr>
+            <td>googleemail</td>
+            <td><%= user.googleemail %> </td>
+          </tr>
+          <tr>
+            <td>username</td>
+            <td><%= user.username %> </td>
+          </tr>
+          <tr>
+            <td>age</td>
+            <td><%= user.age %> </td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+  <div class="col-sm-4">
+  </div>
+</div>
+
+<%- include('bootfooter') -%>

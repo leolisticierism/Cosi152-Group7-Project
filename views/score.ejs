@@ -1,0 +1,34 @@
+<%- include('bootheader') -%>
+<%- include('menubar') -%>
+
+<div class="jumbotron">
+        <h1>Calculate your water consumption!</h1>
+        <p> Write down your water consumption today! (Write 0 if N/A)</p>
+</div>
+
+    <form method="post" action="/calcScore">
+        Time 1<br>
+        amount: <input type="number" name = "aa">ml <br>
+        Time 2<br>
+        amount: <input type="number" name = "bb">ml <br>
+        Time 3<br>
+        amount: <input type="number" name = "cc">ml <br>
+        Time 4<br>
+        amount: <input type="number" name = "dd">ml <br>
+        Time 5<br>
+        amount: <input type="number" name = "ee">ml <br>
+        Time 6<br>
+        amount: <input type="number" name = "ff">ml <br>
+        Time 7<br>
+        amount: <input type="number" name = "gg">ml <br>
+        Time 8<br>
+        amount: <input type="number" name = "hh">ml <br>
+        Time 9<br>
+        amount: <input type="number" name = "ii">ml <br>
+        Time 10<br>
+        amount: <input type="number" name = "jj">ml <br>
+
+        <input type="submit" value="Calculate Your total water consumption!">
+    </form>
+
+<%- include('bootfooter') -%>

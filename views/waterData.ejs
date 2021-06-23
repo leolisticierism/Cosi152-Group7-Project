@@ -1,0 +1,37 @@
+<%- include('bootheader') -%>
+<%- include('menubar') -%>
+
+<div class="jumbotron">
+    <h1> Your Family's Water Profile </h1>
+    <p> Here are your family members </p>
+
+
+    <ul>
+      <% waterData.forEach(water => { %>
+          <li>
+                <a href="/water/<%= water._id %>">
+                    <%= water.name %>
+                </a>
+                (
+                <a href="/water/remove/<%= water._id %>">
+                    Remove
+                 </a>
+                ) <br>
+                Amount of water needed: <%= water.water %>ml. <br>
+                Profile Created: <%= water.createdAt %>
+                <br><br>
+          </li>
+      <% }) %>
+    </ul>
+
+
+
+      <form method="post" action="/water">
+          name: <input type="text" name="name"><br>
+          amount of water needed every day (ml): <input type = "number" name="water"><br>
+          <input type="submit" value="create a new profile!">
+      </form>
+
+  </div>
+
+  <%- include('bootfooter') -%>

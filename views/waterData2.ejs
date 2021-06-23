@@ -1,0 +1,34 @@
+<%- include('bootheader') -%>
+<%- include('menubar') -%>
+
+<div class="jumbotron">
+    <h1> Water Profile for <%= water.name %> </h1>
+    <p> Here is the water profile for <%= water.name %> </p>
+    Your goal for today is to drink <%= water.water %>ml water.<br>
+
+    <ul>
+      <%  for(let i=amounts.length-1; i>=0; i--){
+          amount = amounts[i]
+      %>
+        <li>
+          You drank <%= amount.amount %>ml water today<br>
+          <% if (amount.amount >= water.water ) {%>
+              Congratulations! <br>
+          <%} else {%>
+              You need to drink more water! <br>
+          <%}%>
+          Date: <%= amount.createdAt %><br><br>
+        </li>
+      <%}%>
+    </ul>
+
+      <form method="post" action="/water/addWater/<%= water._id %>">
+          Enter the amount of water you drank today: <input type="number" name="water">ml <br>
+          <input type="submit" value="submit!">
+      </form>
+    <br>
+    <a href = "/water"> back to your family's water profile </a>
+
+  </div>
+
+  <%- include('bootfooter') -%>
