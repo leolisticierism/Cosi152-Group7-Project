@@ -157,6 +157,28 @@ app.post('/editProfile',
     })
 
 
+  //yimng zhang editing
+  app.post('/calcwater', (req,res) => {
+   // converts form parameter from string to float
+    const weight = parseFloat(req.body.weight)
+    res.locals.height =height
+    res.locals.weight = weight
+    res.locals.worker = req.body.worker
+    res.locals.brainworker=0.0326*weight
+    res.locals.physicalworker=0.0434*weight
+    res.locals.needmore =req.body.needmore
+    res.locals.needless =req.body.needless
+    res.locals.pregnant =req.body.pregnant
+    res.locals.brainworkerneedmore=0.0326*weight+0.5
+    res.locals.physicalworkerneedmore=0.0434*weight+0.5
+    res.locals.brainworkerneedless=0.0326*weight-0.5
+    res.locals.physicalworkerneedless=0.0434*weight-0.5
+
+    res.render('showResult')
+  })
+
+
+
 app.use('/daTa',(req,res) => {
   res.json([{a:1,b:2},{a:5,b:3}]);
 })
