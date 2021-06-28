@@ -161,7 +161,6 @@ app.post('/editProfile',
   app.post('/calcwater', (req,res) => {
    // converts form parameter from string to float
     const weight = parseFloat(req.body.weight)
-    res.locals.height =height
     res.locals.weight = weight
     res.locals.worker = req.body.worker
     res.locals.brainworker=0.0326*weight
