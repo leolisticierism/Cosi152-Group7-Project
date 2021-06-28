@@ -9,21 +9,21 @@
     <h3>You weight is <%= weight %>, and you are currently a <%= worker %>
     </h3>
     <hr>
-    <% if (worker==Brainworker) {%>
-       <% if (needmore==Yes) {%>
+    <% if (worker=="Brainworker") {%>
+       <% if (needmore=="Yes") {%>
           You should drink <%= brainworkerneedmore %> L of water every day.
-        <%} if (needless== Yes) {%>
+        <%} else if (needless== "Yes") {%>
           You should drink <%= brainworkerneedless %> L of water every day.
-        <%}
+        <%} else {%>
           You should drink <%= brainworker %> L of water every day.
    <% }%>
 
-   <% if (worker==Physicalworker) {%>
-      <% if (needmore==Yes) {%>
+   <% if (worker=="Physicalworker") {%>
+      <% if (needmore=="Yes") {%>
          You should drink <%= physicalworkerneedmore %> L of water every day.
-       <%} if (needless== Yes) {%>
+       <%} else if (needless== "Yes") {%>
          You should drink <%= physicalworkerneedless %> L of water every day.
-       <%}
+       <%} else {%>
          You should drink <%= physicalworker %> L of water every day.
   <% }%>
 
